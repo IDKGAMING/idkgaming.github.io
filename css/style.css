@@ -858,10 +858,12 @@ Parallax
         height: 100%;
     }
 
+}
+
+@media only screen and (max-width:768px){
     .de3{
         margin-left: 0%
     }
-
 }
 
 @media (max-width:480px) {
