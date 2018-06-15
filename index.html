@@ -484,15 +484,6 @@
       }
     });
 
-    $.get( "https://api.twitch.tv/kraken/streams/byKapone", { client_id: "opxuzd5kxj5he40a4z58wd8t9mxmd7" })
-    .done(function( kapone ) {
-      if(kapone.stream){	
-        $(".icon-byKapone").append("<div>ONLINE  <span style='width: 10px;height: 10px;background-color: #009933;display: inline-block;vertical-align: baseline;''></span></div>")
-        $( ".stream" ).append( "<iframe src='http://player.twitch.tv/?channel=byKapone&muted=true' style='height: 300px; width: 100%;'  frameborder='0' scrolling='no' allowfullscreen='true'> </iframe>" );
-      }else{
-        $(".icon-byKapone").append("<div>OFFLINE  <div style='width: 10px;height: 10px;background-color: #DB0000;display: inline-block;vertical-align: baseline;'></div></div>")
-      }
-    });
 
   </script>
 
