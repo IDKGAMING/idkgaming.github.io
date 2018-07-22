@@ -417,6 +417,10 @@ line-height: 60px;
 	margin-bottom: 20px;
 }
 
+.img-circle {
+    border-radius: 25%;
+}
+
 .team-social {
 	margin-left: 0;
 	padding-left: 0;
