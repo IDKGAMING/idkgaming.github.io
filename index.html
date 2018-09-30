@@ -98,7 +98,8 @@
                         <div class="team boxed-grey">
                             <div class="inner">
                                 <h5>Brunno “Johnnie Walker” Costa</h5>
-                                <p class="subtitle">ADM / Jogador</p>
+                                <p class="subtitle">ADM / Jogador / Streamer <span class="icon-jw"></span></p>
+				 
                                 <div class="avatar"><img src="img/team/brunno.jpg" alt="" class="img-responsive img-circle" /></div>
 
                             </div>
@@ -597,6 +598,17 @@
                     $(".stream").append("<iframe src='http://player.twitch.tv/?channel=jinsz_&muted=true' style='height: 300px; width: 100%;'  frameborder='0' scrolling='no' allowfullscreen='true'> </iframe>");
                 } else {
                     $(".icon-jinsz").append("<div>OFFLINE  <div style='width: 10px;height: 10px;background-color: #DB0000;display: inline-block;vertical-align: baseline;'></div></div>")
+                }
+            });
+	    $.get("https://api.twitch.tv/kraken/streams/idkjw", {
+                client_id: "opxuzd5kxj5he40a4z58wd8t9mxmd7"
+            })
+            .done(function(experi) {
+                if (experi.stream) {
+                    $(".icon-jw").append("<div>ONLINE  <span style='width: 10px;height: 10px;background-color: #009933;display: inline-block;vertical-align: baseline;''></span></div>")
+                    $(".stream").append("<iframe src='http://player.twitch.tv/?channel=idkjw&muted=true' style='height: 300px; width: 100%;'  frameborder='0' scrolling='no' allowfullscreen='true'> </iframe>");
+                } else {
+                    $(".icon-jw").append("<div>OFFLINE  <div style='width: 10px;height: 10px;background-color: #DB0000;display: inline-block;vertical-align: baseline;'></div></div>")
                 }
             });
     </script>
