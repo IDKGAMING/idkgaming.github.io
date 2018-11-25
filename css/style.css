@@ -8,6 +8,23 @@
 /* ==== Google font ==== */
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:700|Merriweather:400italic');
 
+@font-face {
+    font-family: 'MyWebFont';
+    src: url('../fonts/BurbankBigCondensed-Bold.otf') format('opentype');
+  }
+
+.fortnite-line h5, .fortnite-line, .fortnite-head h2{
+    font-family: 'MyWebFont', Fallback, sans-serif!important;
+    font-size: 22px;
+}
+
+.fortnite-head h2{
+    color: #000
+}
+
+.bg-fort{
+    background: url("../img/bg-fort.jpg")
+}
 
 body {
     width: 100%;
@@ -804,10 +821,12 @@ Parallax
     margin-top: 0;
 }
 
-
 /* Media queries */
 
 @media(min-width:767px) {
+    .fortnite-line{
+        height: 300px;
+    }
 
     .navbar {
         border-bottom: 0;
