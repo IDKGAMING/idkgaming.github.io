@@ -182,7 +182,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-offset-1 col-md-2">
                     <div class="wow bounceInUp" data-wow-delay="0.5s">
                         <div class="team boxed-grey">
                             <div class="inner">
@@ -303,7 +303,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-offset-2 col-md-2">
+                <div class="col-md-offset-1 col-md-2">
                     <div class="wow bounceInUp" data-wow-delay="1s">
                         <div class="team boxed-grey">
                             <div class="inner">
@@ -316,6 +316,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-2">
+                        <div class="wow bounceInUp" data-wow-delay="0.8s">
+                            <div class="team boxed-grey">
+                                <div class="inner">
+                                    <h5>David "TheFeels" Felipe</h5>
+                                    <p class="subtitle">Streamer</p>
+                                    <div class="avatar"><img src="img/team/TheFeels.jpg" alt="" class="img-responsive img-circle" /></div>
+                                    <p class="subtitle"><span class="icon-theFells"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <div class="col-md-2">
                     <div class="wow bounceInUp" data-wow-delay="1s">
                         <div class="team boxed-grey">
@@ -676,6 +688,17 @@
                     $(".stream").append("<iframe src='http://player.twitch.tv/?channel=zDuduh&muted=true' style='height: 300px; width: 100%;'  frameborder='0' scrolling='no' allowfullscreen='true'> </iframe>");
                 } else {
                     $(".icon-zDuduh").append("<div>OFFLINE  <div style='width: 10px;height: 10px;background-color: #DB0000;display: inline-block;vertical-align: baseline;'></div></div>")
+                }
+            });
+            $.get("https://api.twitch.tv/kraken/streams/zDuduh", {
+                client_id: "opxuzd5kxj5he40a4z58wd8t9mxmd7"
+            })
+            .done(function(experi) {
+                if (experi.stream) {
+                    $(".icon-theFells").append("<div>ONLINE  <span style='width: 10px;height: 10px;background-color: #009933;display: inline-block;vertical-align: baseline;''></span></div>")
+                    $(".stream").append("<iframe src='http://player.twitch.tv/?channel=theFells&muted=true' style='height: 300px; width: 100%;'  frameborder='0' scrolling='no' allowfullscreen='true'> </iframe>");
+                } else {
+                    $(".icon-theFells").append("<div>OFFLINE  <div style='width: 10px;height: 10px;background-color: #DB0000;display: inline-block;vertical-align: baseline;'></div></div>")
                 }
             });
     </script>
