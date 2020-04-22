@@ -49,7 +49,7 @@
     <section id="intro" class="intro">
 
         <div class="slogan col-sm-6">
-            <h2 id="typed2"> Parabéns, JW!</h2>
+            <h2 id="typed2"> </h2>
         </div>
         <div class="stream col-sm-4">
         </div>
@@ -464,7 +464,6 @@
                             </a>
                         </div>
                     </div>
-			<a href="https://meforma.app/auth/login?app_id=46339155905315420190528"> ir </a>
                     <p>&copy;IDKGaming. Todos os Direitos reservados.</p>
                 </div>
             </div>
@@ -488,6 +487,13 @@
         })
     </script>
     <script>
+        var typed2 = new Typed('#typed2', {
+            strings: ['<i>#MUSIC</i>', '<i>#GAME</i>', '<i>#STREAMING</i>', '<i>#CULTURE</i>', '<i>#LIFESTYLE</i>', '#IDKGAMING'],
+            typeSpeed: 100,
+            backSpeed: 0,
+            fadeOut: true,
+            loop: true
+        });
 
         $.get("https://api.twitch.tv/kraken/streams/experigames", {
                 client_id: "opxuzd5kxj5he40a4z58wd8t9mxmd7"
