@@ -483,97 +483,40 @@
             loop: true
         });
 
-        $.get("https://api.twitch.tv/kraken/streams/experigames", {
-                client_id: "opxuzd5kxj5he40a4z58wd8t9mxmd7"
-            })
-            .done(function(experi) {
-                if (experi.stream) {
-                    $(".icon-experi").append("<div>ONLINE  <span style='width: 10px;height: 10px;background-color: #009933;display: inline-block;vertical-align: baseline;''></span></div>")
-                    $(".stream").append("<iframe src='http://player.twitch.tv/?channel=experigames&muted=true' style='height: 300px; width: 100%;'  frameborder='0' scrolling='no' allowfullscreen='true'> </iframe>");
-                } else {
-                    $(".icon-experi").append("<div>OFFLINE  <div style='width: 10px;height: 10px;background-color: #DB0000;display: inline-block;vertical-align: baseline;'></div></div>")
-                }
-            });
+        fetch('https://api.twitch.tv/kraken/streams/135358044', {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/vnd.twitchtv.v5+json',
+                'Client-ID': 'opxuzd5kxj5he40a4z58wd8t9mxmd7'
+            }
+        }).then((response) => response.json())
+        .then((data) => {
+            if (data.stream) {
+                $(".icon-thalis").append("<div>ONLINE  <span style='width: 10px;height: 10px;background-color: #009933;display: inline-block;vertical-align: baseline;''></span></div>")
+                $(".stream").append("<iframe src='http://player.twitch.tv/?channel=thalisneves&muted=true' style='height: 300px; width: 100%;'  frameborder='0' scrolling='no' allowfullscreen='true'> </iframe>");
+            } else {
+                $(".icon-thalis").append("<div>OFFLINE  <div style='width: 10px;height: 10px;background-color: #DB0000;display: inline-block;vertical-align: baseline;'></div></div>")
+            }
+        })
+        .catch(e => console.log(e));
 
-            $.get("https://api.twitch.tv/kraken/streams/thalisgame", {
-                client_id: "opxuzd5kxj5he40a4z58wd8t9mxmd7"
-            })
-            .done(function(experi) {
-                if (experi.stream) {
-                    $(".icon-thalis").append("<div>ONLINE  <span style='width: 10px;height: 10px;background-color: #009933;display: inline-block;vertical-align: baseline;''></span></div>")
-                    $(".stream").append("<iframe src='http://player.twitch.tv/?channel=thalisgame&muted=true' style='height: 300px; width: 100%;'  frameborder='0' scrolling='no' allowfullscreen='true'> </iframe>");
-                } else {
-                    $(".icon-thalis").append("<div>OFFLINE  <div style='width: 10px;height: 10px;background-color: #DB0000;display: inline-block;vertical-align: baseline;'></div></div>")
-                }
-            });
 
-           $.get("https://api.twitch.tv/kraken/streams/meeisz", {
-                client_id: "opxuzd5kxj5he40a4z58wd8t9mxmd7"
-            })
-            .done(function(experi) {
-                if (experi.stream) {
-                    $(".icon-meeisz").append("<div>ONLINE  <span style='width: 10px;height: 10px;background-color: #009933;display: inline-block;vertical-align: baseline;''></span></div>")
-                    $(".stream").append("<iframe src='http://player.twitch.tv/?channel=meeisz&muted=true' style='height: 300px; width: 100%;'  frameborder='0' scrolling='no' allowfullscreen='true'> </iframe>");
-                } else {
-                    $(".icon-meeisz").append("<div>OFFLINE  <div style='width: 10px;height: 10px;background-color: #DB0000;display: inline-block;vertical-align: baseline;'></div></div>")
-                }
-            });
-
-            $.get("https://api.twitch.tv/kraken/streams/jinsz_", {
-                client_id: "opxuzd5kxj5he40a4z58wd8t9mxmd7"
-            })
-            .done(function(experi) {
-                if (experi.stream) {
-                    $(".icon-jinsz").append("<div>ONLINE  <span style='width: 10px;height: 10px;background-color: #009933;display: inline-block;vertical-align: baseline;''></span></div>")
-                    $(".stream").append("<iframe src='http://player.twitch.tv/?channel=jinsz_&muted=true' style='height: 300px; width: 100%;'  frameborder='0' scrolling='no' allowfullscreen='true'> </iframe>");
-                } else {
-                    $(".icon-jinsz").append("<div>OFFLINE  <div style='width: 10px;height: 10px;background-color: #DB0000;display: inline-block;vertical-align: baseline;'></div></div>")
-                }
-            });
-	    $.get("https://api.twitch.tv/kraken/streams/idkjw", {
-                client_id: "opxuzd5kxj5he40a4z58wd8t9mxmd7"
-            })
-            .done(function(experi) {
-                if (experi.stream) {
-                    $(".icon-jw").append("<div>ONLINE  <span style='width: 10px;height: 10px;background-color: #009933;display: inline-block;vertical-align: baseline;''></span></div>")
-                    $(".stream").append("<iframe src='http://player.twitch.tv/?channel=idkjw&muted=true' style='height: 300px; width: 100%;'  frameborder='0' scrolling='no' allowfullscreen='true'> </iframe>");
-                } else {
-                    $(".icon-jw").append("<div>OFFLINE  <div style='width: 10px;height: 10px;background-color: #DB0000;display: inline-block;vertical-align: baseline;'></div></div>")
-                }
-            });
-        $.get("https://api.twitch.tv/kraken/streams/Hoskes", {
-                client_id: "opxuzd5kxj5he40a4z58wd8t9mxmd7"
-            })
-            .done(function(experi) {
-                if (experi.stream) {
-                    $(".icon-hoskes").append("<div>ONLINE  <span style='width: 10px;height: 10px;background-color: #009933;display: inline-block;vertical-align: baseline;''></span></div>")
-                    $(".stream").append("<iframe src='http://player.twitch.tv/?channel=Hoskes&muted=true' style='height: 300px; width: 100%;'  frameborder='0' scrolling='no' allowfullscreen='true'> </iframe>");
-                } else {
-                    $(".icon-hoskes").append("<div>OFFLINE  <div style='width: 10px;height: 10px;background-color: #DB0000;display: inline-block;vertical-align: baseline;'></div></div>")
-                }
-            });
-        $.get("https://api.twitch.tv/kraken/streams/zDuduh", {
-                client_id: "opxuzd5kxj5he40a4z58wd8t9mxmd7"
-            })
-            .done(function(experi) {
-                if (experi.stream) {
-                    $(".icon-zDuduh").append("<div>ONLINE  <span style='width: 10px;height: 10px;background-color: #009933;display: inline-block;vertical-align: baseline;''></span></div>")
-                    $(".stream").append("<iframe src='http://player.twitch.tv/?channel=zDuduh&muted=true' style='height: 300px; width: 100%;'  frameborder='0' scrolling='no' allowfullscreen='true'> </iframe>");
-                } else {
-                    $(".icon-zDuduh").append("<div>OFFLINE  <div style='width: 10px;height: 10px;background-color: #DB0000;display: inline-block;vertical-align: baseline;'></div></div>")
-                }
-            });
-            $.get("https://api.twitch.tv/kraken/streams/theFells", {
-                client_id: "opxuzd5kxj5he40a4z58wd8t9mxmd7"
-            })
-            .done(function(experi) {
-                if (experi.stream) {
-                    $(".icon-theFells").append("<div>ONLINE  <span style='width: 10px;height: 10px;background-color: #009933;display: inline-block;vertical-align: baseline;''></span></div>")
-                    $(".stream").append("<iframe src='http://player.twitch.tv/?channel=theFells&muted=true' style='height: 300px; width: 100%;'  frameborder='0' scrolling='no' allowfullscreen='true'> </iframe>");
-                } else {
-                    $(".icon-theFells").append("<div>OFFLINE  <div style='width: 10px;height: 10px;background-color: #DB0000;display: inline-block;vertical-align: baseline;'></div></div>")
-                }
-            });
+        fetch('https://api.twitch.tv/kraken/streams/235069452', {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/vnd.twitchtv.v5+json',
+                'Client-ID': 'opxuzd5kxj5he40a4z58wd8t9mxmd7'
+            }
+        }).then((response) => response.json())
+        .then((data) => {
+            if (data.stream) {
+                $(".icon-jw").append("<div>ONLINE  <span style='width: 10px;height: 10px;background-color: #009933;display: inline-block;vertical-align: baseline;''></span></div>")
+                $(".stream").append("<iframe src='http://player.twitch.tv/?channel=idkjw&muted=true' style='height: 300px; width: 100%;'  frameborder='0' scrolling='no' allowfullscreen='true'> </iframe>");
+            } else {
+                $(".icon-jw").append("<div>OFFLINE  <div style='width: 10px;height: 10px;background-color: #DB0000;display: inline-block;vertical-align: baseline;'></div></div>")
+            }
+        })
+        .catch(e => console.log(e));
     </script>
 
 </body>
